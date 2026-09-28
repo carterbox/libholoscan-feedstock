@@ -37,7 +37,7 @@ source:
       - patches/holoscan-config.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not (linux64 or aarch64)]
   skip: true  # [cuda_compiler_version in (None, "None", "") or (cuda_compiler_version or "").startswith("11") or (cuda_compiler_version or "").startswith("12")]
 
@@ -54,8 +54,6 @@ outputs:
         - "*libcuda.so*"              # driver
         - "*libgdrapi.so*"            # part of gdrcopy yet not pre-built for conda-forge channel
         - "*libnvidia-ml.so*"         # driver
-        - "*libnvinfer_plugin.so*"    # NVIDIA's TensorRT not on conda-forge
-        - "*libnvonnxparser.so*"      # NVIDIA's TensorRT not on conda-forge
         - "*libtorchvision.so*"       # not available even in torchvision package
         - "*libv4l2.so*"              # lideo4linux2 lib, not available
         - "*libxpmem.so*"             # XPMEM, Linux Cross-Memory Attach kernel module, not available
@@ -81,6 +79,8 @@ outputs:
         - cuda-nvrtc-dev
         - libjpeg-turbo
         - libnpp-dev
+        - libnvinfer-plugin-devel
+        - libnvonnxparser-devel
         - libtorch {{ libtorch_version }}
         - libtorch * cuda*
         - libvulkan-loader
