@@ -79,8 +79,8 @@ outputs:
         - cuda-nvrtc-dev
         - libjpeg-turbo
         - libnpp-dev
-        - libnvinfer-plugin-devel
-        - libnvonnxparser-devel
+        - libnvinfer-plugin-devel 10.*
+        - libnvonnxparser-devel 10.*
         - libtorch {{ libtorch_version }}
         - libtorch * cuda*
         - libvulkan-loader
