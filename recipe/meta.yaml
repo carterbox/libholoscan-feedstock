@@ -45,7 +45,8 @@ build:
 
 requirements:
   build:
-    - cf-nvidia-tools 1  # [linux]
+    - cf-nvidia-tools >=1.1.1,<2  # [linux]
+    - cuda-cuobjdump
     - file               # [linux]   # used by build.sh to gate check-glibc to ELF files
     - {{ stdlib("c") }}
 

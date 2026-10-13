@@ -115,3 +115,4 @@ ls -l $PREFIX/lib/gxf_extensions/
 find $PREFIX/bin $PREFIX/lib $PREFIX/lib/gxf_extensions -maxdepth 1 -type f \
     -exec sh -c 'if file -b "$1" | grep -q "^ELF"; then check-glibc "$1"; fi' _ {} \;
 find python/ -name "*.so*" -exec check-glibc {} \;
+find python/ -name "*.so*" -exec check-cuda-arch --arch-min=7.5 {} \;
